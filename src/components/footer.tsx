@@ -123,7 +123,7 @@ export function Footer() {
                 <strong className="text-white">Dates:</strong> March 15-22, 2025
               </li>
               <li>
-                <strong className="text-white">Ship:</strong> MSC Seaside
+                <strong className="text-white">Ship:</strong> MSC Armonia
               </li>
               <li>
                 <strong className="text-white">Duration:</strong> 7 Nights

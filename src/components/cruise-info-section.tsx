@@ -2,66 +2,82 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Calendar, MapPin, Ship, Anchor, Clock, Info } from "lucide-react"
+import { Calendar, MapPin, Ship, Anchor, Clock, Info, Users, Music, Heart, Sparkles } from "lucide-react"
 
 const itinerary = [
   {
-    day: "Monday",
+    day: "Monday ",
     date: "14 December 2026",
     port: "Durban",
     arrival: "—",
     departure: "16:00",
     activities: [
-      "Board the ship",
-      "Settle into your cabin",
-      "Begin your journey of rest"
+      "6:00AM - 11:00AM: Slow morning (breakfast)",
+      "11:00AM - 1:00PM: Explore cruise sites (pools, waterpark, spa, entertainment, teens club, bowling, kids' club, 4D cinema, Legoland, shopping, gym)",
+      "12:00PM - 4:00PM: Lunch",
+      "2:00PM - 3:00PM: Word session with guest Pastor (main theatre)",
+      "2:00PM - 3:00PM: Youth Word session with guest Pastor (conference room)",
+      "5:30PM - 8:00PM: Dinner",
+      "8:00PM - 12:00AM: Worship session Guest Artist (main theatre)"
     ]
   },
   {
-    day: "Tuesday",
+    day: "Tuesday ",
     date: "15 December 2026",
     port: "At Sea",
     arrival: "—",
     departure: "—",
     activities: [
-      "Morning reflections",
-      "Worship sessions",
-      "Family activities",
-      "Leisure time"
+      "6:00AM - 11:00AM: Slow morning (breakfast)",
+      "11:00AM - 1:00PM: Explore cruise sites (pools, waterpark, spa, entertainment, teens club, bowling, kids' club, 4D cinema, Legoland, shopping, gym)",
+      "12:00PM - 4:00PM: Lunch",
+      "2:00PM - 3:00PM: Word session with guest Pastor (main theatre)",
+      "2:00PM - 3:00PM: Youth Word session with guest Pastor (conference room)",
+      "5:30PM - 8:00PM: Dinner",
+      "8:00PM - 12:00AM: Worship session Guest Artist (main theatre)"
     ]
   },
   {
-    day: "Wednesday",
+    day: "Wednesday - Pomene, Mozambique",
     date: "16 December 2026",
     port: "Pomene Island, Mozambique",
     arrival: "08:00",
     departure: "18:00",
     activities: [
-      "A day of beauty, stillness, and wonder",
-      "Turquoise waters and pristine beaches",
-      "Time to breathe and reflect"
+      "Optional Island Visit: 8am - 6pm (arranged through MSC Cruises)",
+      "6:00AM - 11:00AM: Slow morning (breakfast)",
+      "11:00AM - 1:00PM: Explore cruise sites (pools, waterpark, spa, entertainment, teens club, bowling, kids' club, 4D cinema, Legoland, shopping, gym)",
+      "12:00PM - 4:00PM: Lunch",
+      "2:00PM - 3:00PM: Word session with guest Pastor (main theatre)",
+      "2:00PM - 3:00PM: Youth Word session with guest Pastor (conference room)",
+      "5:30PM - 8:00PM: Dinner",
+      "8:00PM - 12:00AM: Worship session Guest Artist (main theatre)"
     ]
   },
   {
-    day: "Thursday",
+    day: "Thursday - Rejoice Theme",
     date: "17 December 2026",
     port: "At Sea",
     arrival: "—",
     departure: "—",
     activities: [
-      "Thanksgiving celebration",
-      "Gospel showcases",
-      "Shared moments of praise"
+      "6:00AM - 11:00AM: Slow morning (breakfast)",
+      "11:00AM - 1:00PM: Explore cruise sites (pools, waterpark, spa, entertainment, teens club, bowling, kids' club, 4D cinema, Legoland, shopping, gym)",
+      "12:00PM - 4:00PM: Lunch",
+      "2:00PM - 3:00PM: Word session with guest Pastor (main theatre)",
+      "2:00PM - 3:00PM: Youth Word session with guest Pastor (conference room)",
+      "5:30PM - 8:00PM: Dinner",
+      "8:00PM - 1:00AM: Worship session Guest Artist (main theatre)"
     ]
   },
   {
-    day: "Friday",
+    day: "Friday - Back in SA",
     date: "18 December 2026",
     port: "Durban",
     arrival: "06:00",
     departure: "—",
     activities: [
-      "Final breakfast",
+    
       "Disembarkation",
       "Journey home with a renewed spirit"
     ]
@@ -313,6 +329,205 @@ export function CruiseInfoSection() {
                     <span>Port transfers</span>
                   </li>
                 </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
+        {/* Daily Program Sections */}
+        <div className="mt-24 max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h3 className="text-4xl font-['Cinzel'] font-bold text-foreground mb-4">
+              Daily Program
+            </h3>
+            <p className="text-lg text-foreground/60 font-['Cormorant_Garamond']">
+              A carefully curated daily schedule balancing worship, fellowship, and relaxation
+            </p>
+          </div>
+
+          <div className="space-y-16">
+            {/* Monday - Copywriting Theme */}
+            <Card className="border-2 border-border hover:border-primary/50 transition-all duration-300 overflow-hidden">
+              <CardHeader className="bg-gradient-to-r from-primary/10 to-secondary/10">
+                <div className="flex items-center gap-3">
+                  <div className="p-3 bg-primary rounded-lg">
+                    <Calendar className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <CardTitle className="text-2xl font-['Cinzel'] text-foreground">
+                      Monday 
+                    </CardTitle>
+                    <p className="text-foreground/60 font-['Cormorant_Garamond']">14 December 2026</p>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {[
+                    { time: "6:00AM - 11:00AM", activity: "Slow morning (breakfast)", icon: Heart },
+                    { time: "11:00AM - 1:00PM", activity: "Explore sites on cruise: pools, waterpark, outdoor activities, spa, entertainment area, teens club, bowling alley, kids' club, baby club, 4D cinema, Legoland, shopping, gym & walking track", icon: Users },
+                    { time: "12:00PM - 4:00PM", activity: "Lunch", icon: Heart },
+                    { time: "2:00PM - 3:00PM", activity: "Word session with guest Pastor (main theatre)", icon: Music },
+                    { time: "2:00PM - 3:00PM", activity: "Youth Word session with guest Pastor (conference room)", icon: Users },
+                    { time: "5:30PM - 8:00PM", activity: "Dinner", icon: Heart },
+                    { time: "8:00PM - 12:00AM", activity: "Worship session Guest Artist (main theatre)", icon: Music }
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-start gap-3 p-4 bg-secondary/5 rounded-lg">
+                      <item.icon className="w-5 h-5 text-primary shrink-0 mt-1" />
+                      <div>
+                        <p className="font-semibold text-foreground font-['Cinzel']">{item.time}</p>
+                        <p className="text-foreground/80 font-['Cormorant_Garamond']">{item.activity}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Tuesday - Recharge Theme */}
+            <Card className="border-2 border-border hover:border-primary/50 transition-all duration-300 overflow-hidden">
+              <CardHeader className="bg-gradient-to-r from-primary/10 to-secondary/10">
+                <div className="flex items-center gap-3">
+                  <div className="p-3 bg-primary rounded-lg">
+                    <Calendar className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <CardTitle className="text-2xl font-['Cinzel'] text-foreground">
+                      Tuesday 
+                    </CardTitle>
+                    <p className="text-foreground/60 font-['Cormorant_Garamond']">15 December 2026</p>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {[
+                    { time: "6:00AM - 11:00AM", activity: "Slow morning (breakfast)", icon: Heart },
+                    { time: "11:00AM - 1:00PM", activity: "Explore sites on cruise: pools, waterpark, outdoor activities, spa, entertainment area, teens club, bowling alley, kids' club, baby club, 4D cinema, Legoland, shopping, gym & walking track", icon: Users },
+                    { time: "12:00PM - 4:00PM", activity: "Lunch", icon: Heart },
+                    { time: "2:00PM - 3:00PM", activity: "Word session with guest Pastor (main theatre)", icon: Music },
+                    { time: "2:00PM - 3:00PM", activity: "Youth Word session with guest Pastor (conference room)", icon: Users },
+                    { time: "5:30PM - 8:00PM", activity: "Dinner", icon: Heart },
+                    { time: "8:00PM - 12:00AM", activity: "Worship session Guest Artist (main theatre)", icon: Music }
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-start gap-3 p-4 bg-secondary/5 rounded-lg">
+                      <item.icon className="w-5 h-5 text-primary shrink-0 mt-1" />
+                      <div>
+                        <p className="font-semibold text-foreground font-['Cinzel']">{item.time}</p>
+                        <p className="text-foreground/80 font-['Cormorant_Garamond']">{item.activity}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Wednesday - Pomene, Mozambique */}
+            <Card className="border-2 border-border hover:border-primary/50 transition-all duration-300 overflow-hidden">
+              <CardHeader className="bg-gradient-to-r from-primary/10 to-secondary/10">
+                <div className="flex items-center gap-3">
+                  <div className="p-3 bg-primary rounded-lg">
+                    <MapPin className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <CardTitle className="text-2xl font-['Cinzel'] text-foreground">
+                      Wednesday - Pomene, Mozambique
+                    </CardTitle>
+                    <p className="text-foreground/60 font-['Cormorant_Garamond']">16 December 2026 • Optional Island Visit: 8am - 6pm</p>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="mb-6 p-4 bg-accent/10 rounded-lg">
+                  <p className="text-foreground/80 font-['Cormorant_Garamond'] italic">
+                    While docked in Pomene Bay, guests may choose an optional island excursion to explore the area's natural beauty. This excursion is arranged and paid directly through MSC Cruises and is not part of Journey of Praise cruise programme or entertainment. Guests remaining onboard may continue enjoying the scheduled Journey of Praise worship and fellowship activities while the ship is docked.
+                  </p>
+                </div>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {[
+                    { time: "6:00 AM - 11:00 AM", activity: "Slow morning (breakfast)", icon: Heart },
+                    { time: "11:00 AM - 1:00PM", activity: "Explore sites on cruise: pools, waterpark, outdoor activities, spa, entertainment area, teens club, bowling alley, kids' club, baby club, 4D cinema, Legoland, shopping, gym & walking track", icon: Users },
+                    { time: "12:00PM - 4:00PM", activity: "Lunch", icon: Heart },
+                    { time: "2:00PM - 3:00PM", activity: "Word session with guest Pastor (main theatre)", icon: Music },
+                    { time: "2:00PM - 3:00PM", activity: "Youth Word session with guest Pastor (conference room)", icon: Users },
+                    { time: "5:30PM - 8:00PM", activity: "Dinner", icon: Heart },
+                    { time: "8:00PM - 12:00AM", activity: "Worship session Guest Artist (main theatre)", icon: Music }
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-start gap-3 p-4 bg-secondary/5 rounded-lg">
+                      <item.icon className="w-5 h-5 text-primary shrink-0 mt-1" />
+                      <div>
+                        <p className="font-semibold text-foreground font-['Cinzel']">{item.time}</p>
+                        <p className="text-foreground/80 font-['Cormorant_Garamond']">{item.activity}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Thursday - Rejoice Theme */}
+            <Card className="border-2 border-border hover:border-primary/50 transition-all duration-300 overflow-hidden">
+              <CardHeader className="bg-gradient-to-r from-primary/10 to-secondary/10">
+                <div className="flex items-center gap-3">
+                  <div className="p-3 bg-primary rounded-lg">
+                    <Sparkles className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <CardTitle className="text-2xl font-['Cinzel'] text-foreground">
+                      Thursday -  
+                    </CardTitle>
+                    <p className="text-foreground/60 font-['Cormorant_Garamond']">17 December 2026</p>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {[
+                    { time: "6:00 AM - 11:00 AM", activity: "Slow morning (breakfast)", icon: Heart },
+                    { time: "11:00 AM - 1:00PM", activity: "Explore sites on cruise: pools, waterpark, outdoor activities, spa, entertainment area, teens club, bowling alley, kids' club, baby club, 4D cinema, Legoland, shopping, gym & walking track", icon: Users },
+                    { time: "12:00PM - 4:00PM", activity: "Lunch", icon: Heart },
+                    { time: "2:00PM - 3:00PM", activity: "Word session with guest Pastor (main theatre)", icon: Music },
+                    { time: "2:00PM - 3:00PM", activity: "Youth Word session with guest Pastor (conference room)", icon: Users },
+                    { time: "5:30PM - 8:00PM", activity: "Dinner", icon: Heart },
+                    { time: "8:00PM - 1:00AM", activity: "Worship session Guest Artist (main theatre)", icon: Music }
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-start gap-3 p-4 bg-secondary/5 rounded-lg">
+                      <item.icon className="w-5 h-5 text-primary shrink-0 mt-1" />
+                      <div>
+                        <p className="font-semibold text-foreground font-['Cinzel']">{item.time}</p>
+                        <p className="text-foreground/80 font-['Cormorant_Garamond']">{item.activity}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Friday - Back in SA */}
+            <Card className="border-2 border-border hover:border-primary/50 transition-all duration-300 overflow-hidden">
+              <CardHeader className="bg-gradient-to-r from-primary/10 to-secondary/10">
+                <div className="flex items-center gap-3">
+                  <div className="p-3 bg-primary rounded-lg">
+                    <Anchor className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <CardTitle className="text-2xl font-['Cinzel'] text-foreground">
+                      Friday - Back in SA
+                    </CardTitle>
+                    <p className="text-foreground/60 font-['Cormorant_Garamond']">18 December 2026 • Durban, South Africa • 06:00</p>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="text-center">
+                  <div className="inline-flex items-center gap-3 p-6 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg">
+                    <Anchor className="w-8 h-8 text-primary" />
+                    <div>
+                      <p className="font-bold text-xl font-['Cinzel'] text-foreground">Final Breakfast & Disembarkation</p>
+                      <p className="text-foreground/80 font-['Cormorant_Garamond']">Journey home with a renewed spirit</p>
+                    </div>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </div>
