@@ -1,43 +1,43 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { MapPin } from "lucide-react"
+import { Ship, Anchor, Waves, Utensils, Music, Heart } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 
 export function DestinationsSection() {
-  const destinations = [
+  const cruiseFeatures = [
     {
-      name: "Caribbean Islands",
+      name: "Luxury Spa & Wellness",
       description:
-        "Crystal-clear waters, pristine beaches, and vibrant cultures. Visit historic churches and enjoy tropical paradise.",
-      highlights: ["St. Thomas", "Grand Cayman", "Cozumel", "Nassau"],
-      image:
-        "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&q=80",
+        "Rejuvenate your body and soul in our world-class spa facilities. Experience divine relaxation with premium treatments and serene ocean views.",
+      highlights: ["Thalassotherapy Pool", "Massage Therapy", "Sauna & Steam", "Beauty Salon"],
+      image: "/images/JOP_SpaArea.jpg",
+      icon: Heart,
     },
     {
-      name: "Mediterranean",
+      name: "Gourmet Dining Experience",
       description:
-        "Walk in the footsteps of biblical history. Explore ancient sites, sacred landmarks, and cultural treasures.",
-      highlights: ["Greece", "Israel", "Turkey", "Italy"],
-      image:
-        "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?w=1200&q=80",
+        "Savor exquisite cuisine in our elegant restaurants. From international buffets to fine dining, every meal is a celebration of taste and fellowship.",
+      highlights: ["24-Hour Room Service", "Specialty Restaurants", "Wine Bar", "Themed Dinners"],
+      image: "/images/JOP_FoodBar.jpg",
+      icon: Utensils,
     },
     {
-      name: "Alaska",
+      name: "Premium Entertainment",
       description:
-        "Witness God's majestic creation through glaciers, wildlife, and breathtaking natural wonders.",
-      highlights: ["Juneau", "Skagway", "Ketchikan", "Glacier Bay"],
-      image:
-        "https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?w=1200&q=80",
+        "Be inspired by world-class gospel performances and entertainment. Our main theatre hosts uplifting shows that touch the heart and spirit.",
+      highlights: ["Gospel Concerts", "Live Theatre", "Youth Programs", "Worship Sessions"],
+      image: "/images/JOP_Praise$Worship.jpg",
+      icon: Music,
     },
     {
-      name: "Holy Land",
+      name: "Ocean View Suites",
       description:
-        "Experience a life-changing journey to Jerusalem, Bethlehem, and other sacred biblical sites.",
-      highlights: ["Jerusalem", "Bethlehem", "Nazareth", "Dead Sea"],
-      image:
-        "https://images.unsplash.com/photo-1590517220999-46b7b8407460?w=1200&q=80",
+        "Retreat to your private sanctuary at sea. Our elegantly appointed cabins offer comfort, style, and breathtaking ocean views for perfect rest.",
+      highlights: ["Balcony Cabins", "Ocean Views", "Premium Amenities", "24/7 Service"],
+      image: "/images/JOP_SpaArea.jpg",
+      icon: Ship,
     },
   ]
 
@@ -52,42 +52,42 @@ export function DestinationsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-5xl md:text-6xl font-['Cinzel'] font-bold text-foreground mb-6">
-            Destinations
+            Cruise Features Highlights
           </h2>
           <p className="text-xl md:text-2xl text-foreground/75 max-w-3xl mx-auto font-['Cormorant_Garamond']">
-            Sail to breathtaking locations and experience God's creation in stunning settings
+            Experience the best of MSC Armonia's world-class amenities combined with faith-filled fellowship
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {destinations.map((destination, index) => (
+          {cruiseFeatures.map((feature, index) => (
             <motion.div
-              key={destination.name}
+              key={feature.name}
               initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: index * 0.1 }}
             >
-              <Card className="overflow-hidden border-2 border-border hover:border-accent transition-all duration-300 h-full group hover:shadow-2xl">
+              <div className="overflow-hidden border-2 border-border hover:border-accent transition-all duration-300 h-full group hover:shadow-2xl rounded-lg">
                 <div className="relative h-64 overflow-hidden">
                   <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                    style={{ backgroundImage: `url(${destination.image})` }}
+                    style={{ backgroundImage: `url(${feature.image})` }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/50 to-transparent" />
                   <div className="absolute bottom-6 left-6 flex items-center gap-2">
-                    <MapPin className="w-6 h-6 text-accent" />
+                    <feature.icon className="w-6 h-6 text-accent" />
                     <h3 className="text-3xl font-['Cinzel'] font-bold text-white">
-                      {destination.name}
+                      {feature.name}
                     </h3>
                   </div>
                 </div>
-                <CardContent className="p-6">
+                <div className="p-6">
                   <p className="text-foreground/80 leading-relaxed font-['Cormorant_Garamond'] text-lg mb-4">
-                    {destination.description}
+                    {feature.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {destination.highlights.map((highlight) => (
+                    {feature.highlights.map((highlight) => (
                       <Badge
                         key={highlight}
                         variant="secondary"
@@ -97,8 +97,8 @@ export function DestinationsSection() {
                       </Badge>
                     ))}
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>

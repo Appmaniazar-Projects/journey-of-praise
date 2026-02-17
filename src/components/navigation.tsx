@@ -4,19 +4,26 @@ import Image from "next/image"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { useState } from "react"
+import { usePathname } from "next/navigation"
 
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Cruise Info", href: "/cruise" },
-    { name: "Pricing", href: "/pricing" },
-    { name: "Flights", href: "/flights" },
-    { name: "Headliners", href: "/headliners" },
+  { name: "Pricing", href: "/pricing" },
+  { name: "Flights", href: "/flights" },
+  { name: "Headliners", href: "/headliners" },
   { name: "Gallery", href: "/gallery" },
-    { name: "Book Now", href: "/book-now", cta: true },
+  { name: "Book Now", href: "/book-now", cta: true },
 ] as const
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname()
+
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/"
+    return pathname === href || pathname.startsWith(href + "/")
+  }
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-md">
@@ -43,9 +50,11 @@ export function Navigation() {
                 key={link.name}
                 href={link.href}
                 className={`font-['Cormorant_Garamond'] text-lg transition-colors ${
-                  link.cta
+                  isActive(link.href)
+                    ? "text-accent font-semibold bg-accent/10 px-4 py-2 rounded-lg"
+                    : link.cta
                     ? "bg-accent text-accent-foreground px-6 py-2 rounded-lg hover:bg-accent/90 font-semibold"
-                    : "text-foreground hover:text-accent"
+                    : "text-foreground hover:text-accent hover:bg-muted rounded-lg"
                 }`}
               >
                 {link.name}
@@ -72,7 +81,9 @@ export function Navigation() {
                   href={link.href}
                   onClick={() => setIsOpen(false)}
                   className={`font-['Cormorant_Garamond'] text-lg text-left py-2 px-4 transition-colors ${
-                    link.cta
+                    isActive(link.href)
+                      ? "text-accent font-semibold bg-accent/10 rounded-lg"
+                      : link.cta
                       ? "bg-accent text-accent-foreground rounded-lg hover:bg-accent/90 font-semibold"
                       : "text-foreground hover:text-accent hover:bg-muted rounded-lg"
                   }`}
