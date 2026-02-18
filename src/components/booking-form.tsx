@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -23,11 +23,73 @@ export function BookingForm({ selectedPlan, onBack }: BookingFormProps) {
   })
   const router = useRouter()
 
+  // Load guests data from localStorage on mount to preserve childrenAges
+  useEffect(() => {
+    const savedGuests = localStorage.getItem('guests')
+    if (savedGuests) {
+      try {
+        const guests = JSON.parse(savedGuests)
+        // Update formData with guests info
+        setFormData(prev => ({
+          ...prev,
+          adults: guests.adults || prev.adults,
+          children: guests.children || prev.children
+        }))
+      } catch (e) {
+        console.error('Error parsing guests data:', e)
+      }
+    }
+  }, [])
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     
     // Save form data to localStorage
     localStorage.setItem('customerDetails', JSON.stringify(formData))
+    
+    // Ensure selectedPlan is also saved to localStorage (in case it wasn't saved earlier)
+    if (selectedPlan) {
+      localStorage.setItem('selectedPlan', JSON.stringify(selectedPlan))
+    }
+    
+    // Update guests data - preserve childrenAges if they exist, otherwise create empty array
+    const savedGuests = localStorage.getItem('guests')
+    let guests
+    if (savedGuests) {
+      try {
+        guests = JSON.parse(savedGuests)
+        // Ensure childrenAges exists
+        if (!guests.childrenAges) {
+          guests.childrenAges = []
+        }
+        // Update adults and children from form, but preserve childrenAges
+        guests.adults = formData.adults
+        guests.children = formData.children
+        // If number of children decreased, trim childrenAges array
+        if (guests.childrenAges.length > formData.children) {
+          guests.childrenAges = guests.childrenAges.slice(0, formData.children)
+        }
+        // If number of children increased, pad with 0s
+        while (guests.childrenAges.length < formData.children) {
+          guests.childrenAges.push(0)
+        }
+      } catch (e) {
+        // If parsing fails, create new guests object
+        guests = {
+          adults: formData.adults,
+          children: formData.children,
+          childrenAges: Array(formData.children).fill(0)
+        }
+      }
+    } else {
+      // If guests data doesn't exist, create it from formData
+      guests = {
+        adults: formData.adults,
+        children: formData.children,
+        childrenAges: Array(formData.children).fill(0)
+      }
+    }
+    localStorage.setItem('guests', JSON.stringify(guests))
     
     // Redirect to payment page
     router.push('/payment')

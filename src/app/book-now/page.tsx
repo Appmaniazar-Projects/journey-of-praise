@@ -155,7 +155,11 @@ export default function BookNowPage() {
             {!showForm ? (
               <BookingCart 
                 selectedPlan={selectedPlan}
-                onPlanSelect={setSelectedPlan}
+                onPlanSelect={(plan) => {
+                  setSelectedPlan(plan)
+                  // Save to localStorage immediately when plan is selected
+                  localStorage.setItem('selectedPlan', JSON.stringify(plan))
+                }}
                 onContinue={() => setShowForm(true)}
                 onGuestsChange={setGuests}
               />
