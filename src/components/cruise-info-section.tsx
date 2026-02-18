@@ -134,7 +134,7 @@ export function CruiseInfoSection() {
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-accent rounded-full" />
-                <span>Theatre shows & live music</span>
+                <span>Worded worship sessions</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-accent rounded-full" />
@@ -146,7 +146,7 @@ export function CruiseInfoSection() {
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-accent rounded-full" />
-                <span>24-hour room service</span>
+                <span>20-hour room service</span>
               </div>
             </div>
             <p className="text-lg md:text-xl text-foreground/60 italic font-['Cormorant_Garamond'] mt-4">
@@ -661,7 +661,7 @@ export function CruiseInfoSection() {
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 bg-primary rounded-full shrink-0 mt-2.5" />
-                    <span>Theatre shows & teen entertainment</span>
+                    <span>Worded worship sessions & teen entertainment</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 bg-primary rounded-full shrink-0 mt-2.5" />

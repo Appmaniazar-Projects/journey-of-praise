@@ -104,8 +104,8 @@ export function Footer() {
               <li className="flex items-start gap-3 text-slate-300">
                 <MapPin className="w-5 h-5 mt-1 flex-shrink-0 text-accent" />
                 <span>
-                  Port Miami, FL<br />
-                  United States
+                  Durban,<br />
+                  South Africa
                 </span>
               </li>
             </ul>
@@ -120,20 +120,20 @@ export function Footer() {
             <h3 className="font-['Cormorant_Garamond'] text-2xl font-bold mb-6">Cruise Details</h3>
             <ul className="space-y-3 text-slate-300">
               <li>
-                <strong className="text-white">Dates:</strong> March 15-22, 2025
+                <strong className="text-white">Dates:</strong> December 14-18, 2025
               </li>
               <li>
                 <strong className="text-white">Ship:</strong> MSC Armonia
               </li>
               <li>
-                <strong className="text-white">Duration:</strong> 7 Nights
+                <strong className="text-white">Duration:</strong> 4 Nights
               </li>
               <li>
-                <strong className="text-white">Ports:</strong> Caribbean Islands
+                <strong className="text-white">Ports:</strong> South Africa
               </li>
             </ul>
             <Link
-              href="/pricing#payment"
+              href="/book-now"
               className="mt-6 inline-block bg-accent text-accent-foreground px-6 py-3 rounded-lg hover:bg-accent/90 transition-all duration-300 hover:shadow-lg font-semibold"
             >
               Book Your Cabin

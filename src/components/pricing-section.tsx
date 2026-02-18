@@ -19,7 +19,13 @@ const cabinTypes = [
       "Climate control",
       "TV with entertainment",
       "Safe",
-      "Daily Journey of Praise programmes included"
+      "All Journey of Praise programmes",
+      "Insurance & port charges",
+      "Complimentary dining & daily fine dining",
+      "Fitness facilities, pools & hot tubs",
+      "Worded worship sessions & teen entertainment",
+      "Selected sporting activities",
+      "Room service"
     ],
     capacity: "2-4 guests",
     size: "approx. 13-20 sq m",
@@ -36,7 +42,13 @@ const cabinTypes = [
       "Window with sea view",
       "Sitting area",
       "Mini refrigerator",
-      "Daily Journey of Praise programmes included"
+      "All Journey of Praise programmes",
+      "Insurance & port charges",
+      "Complimentary dining & daily fine dining",
+      "Fitness facilities, pools & hot tubs",
+      "Worded worship sessions & teen entertainment",
+      "Selected sporting activities",
+      "Room service"
     ],
     capacity: "2-4 guests",
     size: "approx. 12-20 sq m",
@@ -51,8 +63,14 @@ const cabinTypes = [
     features: [
       "Private balcony",
       "All Fantastica amenities",
-      "✔ VIP gospel show access",
-      "Daily Journey of Praise programmes included"
+      "VIP gospel show access",
+      "All Journey of Praise programmes",
+      "Insurance & port charges",
+      "Complimentary dining & daily fine dining",
+      "Fitness facilities, pools & hot tubs",
+      "Worded worship sessions & teen entertainment",
+      "Selected sporting activities",
+      "Room service"
     ],
     capacity: "2-4 guests",
     size: "approx. 13-17 sq m + balcony",
@@ -67,9 +85,15 @@ const cabinTypes = [
     features: [
       "Premium balcony cabin",
       "All Fantastica amenities",
-      "✔ VIP gospel show access",
-      "✔ Backstage access to artists",
-      "Daily Journey of Praise programmes included"
+      "VIP gospel show access",
+      "Backstage access to artists",
+      "All Journey of Praise programmes",
+      "Insurance & port charges",
+      "Complimentary dining & daily fine dining",
+      "Fitness facilities, pools & hot tubs",
+      "Worded worship sessions & teen entertainment",
+      "Selected sporting activities",
+      "Room service"
     ],
     capacity: "2-4 guests",
     size: "approx. 13-17 sq m + balcony",
@@ -153,7 +177,7 @@ export function PricingSection() {
                   ))}
                 </div>
 
-                  <Link href="/book-now" className="w-full">
+                  <Link href={`/book-now?plan=${encodeURIComponent(cabin.name.toLowerCase().replace(/\s+/g, '-'))}`} className="w-full">
                     <Button 
                       className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-['Cinzel'] text-base mt-auto"
                     >
@@ -170,7 +194,16 @@ export function PricingSection() {
             * All prices include cruise fare, insurance, port taxes, and access to Journey of Praise programmes.
           </p>
           <div className="p-6 bg-accent/5 rounded-xl border border-accent/20">
-            <h4 className="text-xl font-['Cinzel'] text-accent mb-2">Important Note on Bookings</h4>
+            <h4 className="text-xl font-['Cinzel'] text-accent mb-2">Children's Pricing</h4>
+            <p className="text-foreground/80 font-['Cormorant_Garamond'] text-lg mb-2">
+              Kids travel free on the cruise fare, however insurance and port taxes charges still apply.
+            </p>
+            <p className="text-foreground/70 font-['Cormorant_Garamond'] text-base">
+              Insurance and port taxes for children range from <strong>R1,000 to R2,000</strong> depending on the age of the child.
+            </p>
+          </div>
+          <div className="p-6 bg-muted/50 rounded-xl border border-border">
+            <h4 className="text-xl font-['Cinzel'] text-foreground mb-2">Important Note on Bookings</h4>
             <p className="text-foreground/80 font-['Cormorant_Garamond'] text-lg">
               Payment details are still being finalised with MSC. Please reserve your cabin to be notified as soon as payment plans are active.
             </p>
