@@ -19,7 +19,7 @@ export function DestinationsSection() {
       name: "Dining Experience",
       description:
         "Savor exquisite cuisine in our elegant restaurants. From international buffets to fine dining, every meal is a celebration of taste and fellowship.",
-      highlights: ["20-Hour Room Service", "Specialty Restaurants", "Wine Bar", "Themed Dinners"],
+      highlights: ["20-Hour Room Service", "Specialty Restaurants", "Vitamin Bar", "Themed Dinners"],
       image: "/images/JOP_VitaminBar.webp",
       icon: Utensils,
     },
